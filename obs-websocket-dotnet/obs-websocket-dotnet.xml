@@ -19,11 +19,11 @@
             Password salt
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Communication.OBSAuthInfo.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Communication.OBSAuthInfo.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Builds the object from JSON response body
             </summary>
-            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JObject"/></param>
+            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JsonObject"/></param>
         </member>
         <member name="M:OBSWebsocketDotNet.Communication.OBSAuthInfo.#ctor">
             <summary>
@@ -430,7 +430,7 @@
             An unsupported event has been received.
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.OBSWebsocket.ProcessEventType(System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.OBSWebsocket.ProcessEventType(System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Update message handler
             </summary>
@@ -478,15 +478,15 @@
             Disconnect this instance from the server
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SendRequest(System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SendRequest(System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Sends a message to the websocket API with the specified request type and optional parameters
             </summary>
             <param name="requestType">obs-websocket request type, must be one specified in the protocol specification</param>
             <param name="additionalFields">additional JSON fields if required by the request type</param>
-            <returns>The server's JSON response as a JObject</returns>
+            <returns>The server's JSON response as a JsonObject</returns>
         </member>
-        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SendRequest(OBSWebsocketDotNet.Communication.MessageTypes,System.String,Newtonsoft.Json.Linq.JObject,System.Boolean)">
+        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SendRequest(OBSWebsocketDotNet.Communication.MessageTypes,System.String,Newtonsoft.Json.Linq.JsonObject,System.Boolean)">
             <summary>
             Internal version which allows to set the opcode
             Sends a message to the websocket API with the specified request type and optional parameters
@@ -495,7 +495,7 @@
             <param name="requestType">obs-websocket request type, must be one specified in the protocol specification</param>
             <param name="additionalFields">additional JSON fields if required by the request type</param>
             <param name="waitForReply">Should wait for reply vs "fire and forget"</param>
-            <returns>The server's JSON response as a JObject</returns>
+            <returns>The server's JSON response as a JsonObject</returns>
         </member>
         <member name="M:OBSWebsocketDotNet.OBSWebsocket.GetAuthInfo">
             <summary>
@@ -620,13 +620,13 @@
             <param name="position">	T-Bar position. This value must be between 0.0 and 1.0.</param>
             <param name="release">Whether or not the T-Bar gets released automatically after setting its new position (like a user releasing their mouse button after moving the T-Bar). Call ReleaseTBar manually if you set release to false. Defaults to true.</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetSourceFilterSettings(System.String,System.String,Newtonsoft.Json.Linq.JObject,System.Boolean)">
+        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetSourceFilterSettings(System.String,System.String,Newtonsoft.Json.Linq.JsonObject,System.Boolean)">
             <summary>
             Apply settings to a source filter
             </summary>
             <param name="sourceName">Source with filter</param>
             <param name="filterName">Filter name</param>
-            <param name="filterSettings">JObject with filter settings</param>
+            <param name="filterSettings">JsonObject with filter settings</param>
             <param name="overlay">Apply over existing settings?</param>
         </member>
         <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetSourceFilterSettings(System.String,System.String,OBSWebsocketDotNet.Types.FilterSettings,System.Boolean)">
@@ -666,14 +666,14 @@
             <param name="sourceName">Name of the source the filter is on</param>
             <param name="filterName">Name of the filter to remove</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.OBSWebsocket.CreateSourceFilter(System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.OBSWebsocket.CreateSourceFilter(System.String,System.String,System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Add a filter to a source
             </summary>
             <param name="sourceName">Name of the source for the filter</param>
             <param name="filterName">Name of the filter</param>
             <param name="filterKind">Type of filter</param>
-            <param name="filterSettings">JObject holding filter settings object</param>
+            <param name="filterSettings">JsonObject holding filter settings object</param>
         </member>
         <member name="M:OBSWebsocketDotNet.OBSWebsocket.CreateSourceFilter(System.String,System.String,System.String,OBSWebsocketDotNet.Types.FilterSettings)">
             <summary>
@@ -719,7 +719,7 @@
             </summary>
             <param name="transitionDuration">Desired transition duration (in milliseconds)</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetCurrentSceneTransitionSettings(Newtonsoft.Json.Linq.JObject,System.Boolean)">
+        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetCurrentSceneTransitionSettings(Newtonsoft.Json.Linq.JsonObject,System.Boolean)">
             <summary>
             Change the current settings of a transition
             </summary>
@@ -763,13 +763,13 @@
             </summary>
             <param name="inputName">Name of the source which mute state will be toggled</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetSceneItemTransform(System.String,System.Int32,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetSceneItemTransform(System.String,System.Int32,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Sets the transform and crop info of a scene item
             </summary>
             <param name="sceneName">Name of the scene that has the SceneItem</param>
             <param name="sceneItemId">Id of the Scene Item</param>
-            <param name="sceneItemTransform">JObject holding transform settings</param>
+            <param name="sceneItemTransform">JsonObject holding transform settings</param>
         </member>
         <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetSceneItemTransform(System.String,System.Int32,OBSWebsocketDotNet.Types.SceneItemTransformInfo)">
             <summary>
@@ -1000,7 +1000,7 @@
             <param name="inputName">Name of the input to set the audio monitor type of</param>
             <param name="monitorType">Audio monitor type. See `GetInputAudioMonitorType for possible types.</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.OBSWebsocket.BroadcastCustomEvent(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.OBSWebsocket.BroadcastCustomEvent(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Broadcasts a `CustomEvent` to all WebSocket clients. Receivers are clients which are identified and subscribed.
             </summary>
@@ -1022,14 +1022,14 @@
             <param name="inputName">Name of the media input</param>
             <param name="mediaCursorOffset">Value to offset the current cursor position by (milliseconds +/-)</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.OBSWebsocket.CreateInput(System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject,System.Nullable{System.Boolean})">
+        <member name="M:OBSWebsocketDotNet.OBSWebsocket.CreateInput(System.String,System.String,System.String,Newtonsoft.Json.Linq.JsonObject,System.Nullable{System.Boolean})">
             <summary>
             Creates a new input, adding it as a scene item to the specified scene.
             </summary>
             <param name="sceneName">Name of the scene to add the input to as a scene item</param>
             <param name="inputName">Name of the new input to created</param>
             <param name="inputKind">The kind of input to be created</param>
-            <param name="inputSettings">Jobject holding the settings object to initialize the input with</param>
+            <param name="inputSettings">JsonObject holding the settings object to initialize the input with</param>
             <param name="sceneItemEnabled">Whether to set the created scene item to enabled or disabled</param>
             <returns>ID of the SceneItem in the scene.</returns>
         </member>
@@ -1071,12 +1071,12 @@
             <param name="inputName">Name of the input</param>
             <returns>Object of audio tracks and associated enable states</returns>
         </member>
-        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetInputAudioTracks(System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetInputAudioTracks(System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Sets the enable state of audio tracks of an input.
             </summary>
             <param name="inputName">Name of the input</param>
-            <param name="inputAudioTracks">JObject holding track settings to apply</param>
+            <param name="inputAudioTracks">JsonObject holding track settings to apply</param>
         </member>
         <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetInputAudioTracks(System.String,OBSWebsocketDotNet.Types.SourceTracks)">
             <summary>
@@ -1123,7 +1123,7 @@
             <param name="slotName">The name of the slot to retrieve data from</param>
             <returns type="Any">Value associated with the slot. `null` if not set</returns>
         </member>
-        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetPersistentData(System.String,System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetPersistentData(System.String,System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Sets the value of a \"slot\" from the selected persistent data realm.
             </summary>
@@ -1201,7 +1201,7 @@
             </summary>
             <returns>Version info in an <see cref="T:OBSWebsocketDotNet.Types.ObsVersion"/> object</returns>
         </member>
-        <member name="M:OBSWebsocketDotNet.OBSWebsocket.CallVendorRequest(System.String,System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.OBSWebsocket.CallVendorRequest(System.String,System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Call a request registered to a vendor.
             A vendor is a unique name registered by a third-party plugin or script, which allows for custom requests and events to be added to obs-websocket.
@@ -1268,7 +1268,7 @@
             <param name="inputSettings">Object of settings to apply</param>
             <param name="overlay">True == apply the settings on top of existing ones, False == reset the input to its defaults, then apply settings.</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetInputSettings(System.String,Newtonsoft.Json.Linq.JObject,System.Boolean)">
+        <member name="M:OBSWebsocketDotNet.OBSWebsocket.SetInputSettings(System.String,Newtonsoft.Json.Linq.JsonObject,System.Boolean)">
             <summary>
             Sets the settings of an input.
             </summary>
@@ -1372,7 +1372,7 @@
         </member>
         <member name="M:OBSWebsocketDotNet.OBSWebsocket.GetSceneItemTransformRaw(System.String,System.Int32)">
             <summary>
-            Gets the JObject of transform settings for a scene item. Use this one you don't want it populated with default values.
+            Gets the JsonObject of transform settings for a scene item. Use this one you don't want it populated with default values.
             Scenes and Groups
             </summary>
             <param name="sceneName">Name of the scene the item is in</param>
@@ -1682,13 +1682,13 @@
             <param name="position">	T-Bar position. This value must be between 0.0 and 1.0.</param>
             <param name="release">Whether or not the T-Bar gets released automatically after setting its new position (like a user releasing their mouse button after moving the T-Bar). Call ReleaseTBar manually if you set release to false. Defaults to true.</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetSourceFilterSettings(System.String,System.String,Newtonsoft.Json.Linq.JObject,System.Boolean)">
+        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetSourceFilterSettings(System.String,System.String,Newtonsoft.Json.Linq.JsonObject,System.Boolean)">
             <summary>
             Apply settings to a source filter
             </summary>
             <param name="sourceName">Source with filter</param>
             <param name="filterName">Filter name</param>
-            <param name="filterSettings">JObject with filter settings</param>
+            <param name="filterSettings">JsonObject with filter settings</param>
             <param name="overlay">Apply over existing settings?</param>
         </member>
         <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetSourceFilterSettings(System.String,System.String,OBSWebsocketDotNet.Types.FilterSettings,System.Boolean)">
@@ -1728,14 +1728,14 @@
             <param name="sourceName">Name of the source the filter is on</param>
             <param name="filterName">Name of the filter to remove</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.CreateSourceFilter(System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.CreateSourceFilter(System.String,System.String,System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Add a filter to a source
             </summary>
             <param name="sourceName">Name of the source for the filter</param>
             <param name="filterName">Name of the filter</param>
             <param name="filterKind">Type of filter</param>
-            <param name="filterSettings">JObject holding filter settings object</param>
+            <param name="filterSettings">JsonObject holding filter settings object</param>
         </member>
         <member name="M:OBSWebsocketDotNet.IOBSWebsocket.CreateSourceFilter(System.String,System.String,System.String,OBSWebsocketDotNet.Types.FilterSettings)">
             <summary>
@@ -1781,7 +1781,7 @@
             </summary>
             <param name="transitionDuration">Desired transition duration (in milliseconds)</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetCurrentSceneTransitionSettings(Newtonsoft.Json.Linq.JObject,System.Boolean)">
+        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetCurrentSceneTransitionSettings(Newtonsoft.Json.Linq.JsonObject,System.Boolean)">
             <summary>
             Change the current settings of a transition
             </summary>
@@ -1825,13 +1825,13 @@
             </summary>
             <param name="inputName">Name of the source which mute state will be toggled</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetSceneItemTransform(System.String,System.Int32,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetSceneItemTransform(System.String,System.Int32,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Sets the transform and crop info of a scene item
             </summary>
             <param name="sceneName">Name of the scene that has the SceneItem</param>
             <param name="sceneItemId">Id of the Scene Item</param>
-            <param name="sceneItemTransform">JObject holding transform settings</param>
+            <param name="sceneItemTransform">JsonObject holding transform settings</param>
         </member>
         <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetSceneItemTransform(System.String,System.Int32,OBSWebsocketDotNet.Types.SceneItemTransformInfo)">
             <summary>
@@ -2062,7 +2062,7 @@
             <param name="inputName">Name of the input to set the audio monitor type of</param>
             <param name="monitorType">Audio monitor type. See `GetInputAudioMonitorType for possible types.</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.BroadcastCustomEvent(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.BroadcastCustomEvent(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Broadcasts a `CustomEvent` to all WebSocket clients. Receivers are clients which are identified and subscribed.
             </summary>
@@ -2084,14 +2084,14 @@
             <param name="inputName">Name of the media input</param>
             <param name="mediaCursorOffset">Value to offset the current cursor position by (milliseconds +/-)</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.CreateInput(System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject,System.Nullable{System.Boolean})">
+        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.CreateInput(System.String,System.String,System.String,Newtonsoft.Json.Linq.JsonObject,System.Nullable{System.Boolean})">
             <summary>
             Creates a new input, adding it as a scene item to the specified scene.
             </summary>
             <param name="sceneName">Name of the scene to add the input to as a scene item</param>
             <param name="inputName">Name of the new input to created</param>
             <param name="inputKind">The kind of input to be created</param>
-            <param name="inputSettings">Jobject holding the settings object to initialize the input with</param>
+            <param name="inputSettings">JsonObject holding the settings object to initialize the input with</param>
             <param name="sceneItemEnabled">Whether to set the created scene item to enabled or disabled</param>
             <returns>ID of the SceneItem in the scene.</returns>
         </member>
@@ -2133,12 +2133,12 @@
             <param name="inputName">Name of the input</param>
             <returns>Object of audio tracks and associated enable states</returns>
         </member>
-        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetInputAudioTracks(System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetInputAudioTracks(System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Sets the enable state of audio tracks of an input.
             </summary>
             <param name="inputName">Name of the input</param>
-            <param name="inputAudioTracks">JObject holding track settings to apply</param>
+            <param name="inputAudioTracks">JsonObject holding track settings to apply</param>
         </member>
         <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetInputAudioTracks(System.String,OBSWebsocketDotNet.Types.SourceTracks)">
             <summary>
@@ -2185,7 +2185,7 @@
             <param name="slotName">The name of the slot to retrieve data from</param>
             <returns type="Any">Value associated with the slot. `null` if not set</returns>
         </member>
-        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetPersistentData(System.String,System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetPersistentData(System.String,System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Sets the value of a \"slot\" from the selected persistent data realm.
             </summary>
@@ -2263,7 +2263,7 @@
             </summary>
             <returns>Version info in an <see cref="T:OBSWebsocketDotNet.Types.ObsVersion"/> object</returns>
         </member>
-        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.CallVendorRequest(System.String,System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.CallVendorRequest(System.String,System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Call a request registered to a vendor.
             A vendor is a unique name registered by a third-party plugin or script, which allows for custom requests and events to be added to obs-websocket.
@@ -2330,7 +2330,7 @@
             <param name="inputSettings">Object of settings to apply</param>
             <param name="overlay">True == apply the settings on top of existing ones, False == reset the input to its defaults, then apply settings.</param>
         </member>
-        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetInputSettings(System.String,Newtonsoft.Json.Linq.JObject,System.Boolean)">
+        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SetInputSettings(System.String,Newtonsoft.Json.Linq.JsonObject,System.Boolean)">
             <summary>
             Sets the settings of an input.
             </summary>
@@ -2434,7 +2434,7 @@
         </member>
         <member name="M:OBSWebsocketDotNet.IOBSWebsocket.GetSceneItemTransformRaw(System.String,System.Int32)">
             <summary>
-            Gets the JObject of transform settings for a scene item. Use this one you don't want it populated with default values.
+            Gets the JsonObject of transform settings for a scene item. Use this one you don't want it populated with default values.
             Scenes and Groups
             </summary>
             <param name="sceneName">Name of the scene the item is in</param>
@@ -2615,13 +2615,13 @@
             Disconnect this instance from the server
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SendRequest(System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.IOBSWebsocket.SendRequest(System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Sends a message to the websocket API with the specified request type and optional parameters
             </summary>
             <param name="requestType">obs-websocket request type, must be one specified in the protocol specification</param>
             <param name="additionalFields">additional JSON fields if required by the request type</param>
-            <returns>The server's JSON response as a JObject</returns>
+            <returns>The server's JSON response as a JsonObject</returns>
         </member>
         <member name="M:OBSWebsocketDotNet.IOBSWebsocket.GetAuthInfo">
             <summary>
@@ -3125,12 +3125,12 @@
             Object of audio tracks along with their associated enable states
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.Events.InputAudioTracksChangedEventArgs.#ctor(System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.Events.InputAudioTracksChangedEventArgs.#ctor(System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Default Constructor
             </summary>
             <param name="inputName">The input name</param>
-            <param name="inputAudioTracks">The audio track data as a JObject</param>
+            <param name="inputAudioTracks">The audio track data as a JsonObject</param>
         </member>
         <member name="T:OBSWebsocketDotNet.Types.Events.InputCreatedEventArgs">
             <summary>
@@ -3162,15 +3162,15 @@
             The default settings for the input
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.Events.InputCreatedEventArgs.#ctor(System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.Events.InputCreatedEventArgs.#ctor(System.String,System.String,System.String,Newtonsoft.Json.Linq.JsonObject,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Default Constructor
             </summary>
             <param name="inputName">The input name</param>
             <param name="inputKind">The kind of input</param>
             <param name="unversionedInputKind">The unversioned kind of input</param>
-            <param name="inputSettings">The input settings as a JObject</param>
-            <param name="defaultInputSettings">The default input settings as a JObject</param>
+            <param name="inputSettings">The input settings as a JsonObject</param>
+            <param name="defaultInputSettings">The default input settings as a JsonObject</param>
         </member>
         <member name="T:OBSWebsocketDotNet.Types.Events.InputMuteStateChangedEventArgs">
             <summary>
@@ -3280,11 +3280,11 @@
             Array of active inputs with their associated volume levels
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.Events.InputVolumeMetersEventArgs.#ctor(System.Collections.Generic.List{Newtonsoft.Json.Linq.JObject})">
+        <member name="M:OBSWebsocketDotNet.Types.Events.InputVolumeMetersEventArgs.#ctor(System.Collections.Generic.List{Newtonsoft.Json.Linq.JsonObject})">
             <summary>
             Default Constructor
             </summary>
-            <param name="inputs">Collection inputs as JObjects</param>
+            <param name="inputs">Collection inputs as JsonObjects</param>
         </member>
         <member name="T:OBSWebsocketDotNet.Types.Events.MediaInputActionTriggeredEventArgs">
             <summary>
@@ -3532,15 +3532,15 @@
         </member>
         <member name="P:OBSWebsocketDotNet.Types.Events.SceneItemListReindexedEventArgs.SceneItems">
             <summary>
-            List of all scene items as JObject
+            List of all scene items as JsonObject
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.Events.SceneItemListReindexedEventArgs.#ctor(System.String,System.Collections.Generic.List{Newtonsoft.Json.Linq.JObject})">
+        <member name="M:OBSWebsocketDotNet.Types.Events.SceneItemListReindexedEventArgs.#ctor(System.String,System.Collections.Generic.List{Newtonsoft.Json.Linq.JsonObject})">
             <summary>
             Default Constructor
             </summary>
             <param name="sceneName">The scene name</param>
-            <param name="sceneItems">The scene item data as a colleciton of JObjects</param>
+            <param name="sceneItems">The scene item data as a colleciton of JsonObjects</param>
         </member>
         <member name="T:OBSWebsocketDotNet.Types.Events.SceneItemLockStateChangedEventArgs">
             <summary>
@@ -3658,11 +3658,11 @@
             Updated array of scenes
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.Events.SceneListChangedEventArgs.#ctor(System.Collections.Generic.List{Newtonsoft.Json.Linq.JObject})">
+        <member name="M:OBSWebsocketDotNet.Types.Events.SceneListChangedEventArgs.#ctor(System.Collections.Generic.List{Newtonsoft.Json.Linq.JsonObject})">
             <summary>
             Default Constructor
             </summary>
-            <param name="scenes">Collection of scene data as JObjects</param>
+            <param name="scenes">Collection of scene data as JsonObjects</param>
         </member>
         <member name="T:OBSWebsocketDotNet.Types.Events.SceneNameChangedEventArgs">
             <summary>
@@ -3791,7 +3791,7 @@
             The default settings for the filter
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.Events.SourceFilterCreatedEventArgs.#ctor(System.String,System.String,System.String,System.Int32,Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.Events.SourceFilterCreatedEventArgs.#ctor(System.String,System.String,System.String,System.Int32,Newtonsoft.Json.Linq.JsonObject,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Default Constructor
             </summary>
@@ -3799,8 +3799,8 @@
             <param name="filterName">The filter name</param>
             <param name="filterKind">The kind of filter</param>
             <param name="filterIndex">The index of the filter</param>
-            <param name="filterSettings">The filters settings as a JObject</param>
-            <param name="defaultFilterSettings">The default filter settings as a JObject</param>
+            <param name="filterSettings">The filters settings as a JsonObject</param>
+            <param name="defaultFilterSettings">The default filter settings as a JsonObject</param>
         </member>
         <member name="T:OBSWebsocketDotNet.Types.Events.SourceFilterEnableStateChangedEventArgs">
             <summary>
@@ -3949,7 +3949,7 @@
             The body of the event
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.Events.UnsupportedEventArgs.#ctor(System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.Events.UnsupportedEventArgs.#ctor(System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Event args for unsupported events
             </summary>
@@ -3974,7 +3974,7 @@
             Vendor-provided event data. {} if event does not provide any data
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.Events.VendorEventArgs.#ctor(System.String,System.String,Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.Events.VendorEventArgs.#ctor(System.String,System.String,Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Default Constructor
             </summary>
@@ -4114,7 +4114,7 @@
             Kind of the Input
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.Input.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.Input.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Instantiate object from response data
             </summary>
@@ -4135,7 +4135,7 @@
             Unversioned Kind of the Input
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.InputBasicInfo.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.InputBasicInfo.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Instantiate object from response data
             </summary>
@@ -4304,11 +4304,11 @@
             Settings for the source
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.InputSettings.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.InputSettings.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Builds the object from the JSON data
             </summary>
-            <param name="data">JSON item description as a <see cref="T:Newtonsoft.Json.Linq.JObject"/></param>
+            <param name="data">JSON item description as a <see cref="T:Newtonsoft.Json.Linq.JsonObject"/></param>
         </member>
         <member name="M:OBSWebsocketDotNet.Types.InputSettings.#ctor">
             <summary>
@@ -4335,11 +4335,11 @@
             The source volume in decibels
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.InputVolume.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.InputVolume.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Builds the object from the JSON response body
             </summary>
-            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JObject"/></param>
+            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JsonObject"/></param>
         </member>
         <member name="M:OBSWebsocketDotNet.Types.InputVolume.#ctor">
             <summary>
@@ -4401,9 +4401,9 @@
             Position of the cursor in milliseconds. `null` if not playing
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.MediaInputStatus.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.MediaInputStatus.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
-            Instantiate from JObject
+            Instantiate from JsonObject
             </summary>
             <param name="body"></param>
         </member>
@@ -4492,7 +4492,7 @@
             Monitor Position Y
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.Monitor.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.Monitor.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Constructor to auto populate
             </summary>
@@ -4528,11 +4528,11 @@
             Scene item list
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.ObsScene.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.ObsScene.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Builds the object from the JSON description
             </summary>
-            <param name="data">JSON scene description as a <see cref="T:Newtonsoft.Json.Linq.JObject" /></param>
+            <param name="data">JSON scene description as a <see cref="T:Newtonsoft.Json.Linq.JsonObject" /></param>
         </member>
         <member name="M:OBSWebsocketDotNet.Types.ObsScene.#ctor">
             <summary>
@@ -4639,11 +4639,11 @@
             Description of the platform, like `Windows 10 (10.0)`
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.ObsVersion.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.ObsVersion.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Builds the object from the JSON response body
             </summary>
-            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JObject"/></param>
+            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JsonObject"/></param>
         </member>
         <member name="M:OBSWebsocketDotNet.Types.ObsVersion.#ctor">
             <summary>
@@ -4740,7 +4740,7 @@
             OutputState enum of current state
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.OutputStateChanged.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.OutputStateChanged.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Constructor
             </summary>
@@ -4796,11 +4796,11 @@
             Total number of frames delivered by the output's process
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.OutputStatus.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.OutputStatus.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Builds the object from the JSON response body
             </summary>
-            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JObject"/></param>
+            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JsonObject"/></param>
         </member>
         <member name="M:OBSWebsocketDotNet.Types.OutputStatus.#ctor">
             <summary>
@@ -4837,11 +4837,11 @@
             Number of bytes sent by the output
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.RecordingStatus.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.RecordingStatus.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Builds the object from the JSON response body
             </summary>
-            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JObject"/></param>
+            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JsonObject"/></param>
         </member>
         <member name="M:OBSWebsocketDotNet.Types.RecordingStatus.#ctor">
             <summary>
@@ -4858,7 +4858,7 @@
             File name for the saved recording, if record stopped. null otherwise
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.RecordStateChanged.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.RecordStateChanged.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Constructor
             </summary>
@@ -4949,11 +4949,11 @@
             Type of the scene item's source.
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.SceneItemDetails.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.SceneItemDetails.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Builds the object from the JSON data
             </summary>
-            <param name="data">JSON item description as a <see cref="T:Newtonsoft.Json.Linq.JObject"/></param>
+            <param name="data">JSON item description as a <see cref="T:Newtonsoft.Json.Linq.JsonObject"/></param>
         </member>
         <member name="M:OBSWebsocketDotNet.Types.SceneItemDetails.#ctor">
             <summary>
@@ -5080,7 +5080,7 @@
             The y position of the scene item from the top
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.SceneItemTransformInfo.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.SceneItemTransformInfo.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Initialize the scene item transform
             </summary>
@@ -5106,7 +5106,7 @@
             Whether the source is showing in the UI (Preview, Projector, Properties)
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.SourceActiveInfo.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.SourceActiveInfo.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Auto populate constructor
             </summary>
@@ -5152,11 +5152,11 @@
             Is the track active
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.SourceTracks.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.SourceTracks.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Builds the object from the JSON data
             </summary>
-            <param name="data">JSON item description as a <see cref="T:Newtonsoft.Json.Linq.JObject"/></param>
+            <param name="data">JSON item description as a <see cref="T:Newtonsoft.Json.Linq.JsonObject"/></param>
         </member>
         <member name="M:OBSWebsocketDotNet.Types.SourceTracks.#ctor">
             <summary>
@@ -5273,11 +5273,11 @@
             Object of settings for the transition. 'null' if transition is not configurable
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.TransitionSettings.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.TransitionSettings.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Builds the object from the JSON response body
             </summary>
-            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JObject"/></param>
+            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JsonObject"/></param>
         </member>
         <member name="M:OBSWebsocketDotNet.Types.TransitionSettings.#ctor">
             <summary>
@@ -5294,11 +5294,11 @@
             Whether the output is active
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.VirtualCamStatus.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.VirtualCamStatus.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Builds the object from the JSON response body
             </summary>
-            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JObject"/></param>
+            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JsonObject"/></param>
         </member>
         <member name="M:OBSWebsocketDotNet.Types.VirtualCamStatus.#ctor">
             <summary>
@@ -5320,11 +5320,11 @@
             Volume setting in dB
             </summary>
         </member>
-        <member name="M:OBSWebsocketDotNet.Types.VolumeInfo.#ctor(Newtonsoft.Json.Linq.JObject)">
+        <member name="M:OBSWebsocketDotNet.Types.VolumeInfo.#ctor(Newtonsoft.Json.Linq.JsonObject)">
             <summary>
             Builds the object from the JSON response body
             </summary>
-            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JObject"/></param>
+            <param name="data">JSON response body as a <see cref="T:Newtonsoft.Json.Linq.JsonObject"/></param>
         </member>
         <member name="M:OBSWebsocketDotNet.Types.VolumeInfo.#ctor">
             <summary>

@@ -14,33 +14,33 @@ namespace OBSWebsocketDotNet.Types
         /// <summary>
         /// Unique item id of the source item
         /// </summary>
-        [JsonProperty(PropertyName = "sceneItemId")]
+        [JsonPropertyName("sceneItemId")]
         public int ItemId { set; get; }
 
         /// <summary>
         /// Kind of source (Example: vlc_source or image_source)
         /// </summary>
-        [JsonProperty(PropertyName = "inputKind")]
+        [JsonPropertyName("inputKind")]
         public string SourceKind { set; get; }
 
         /// <summary>
         /// Name of the scene item's source
         /// </summary>
-        [JsonProperty(PropertyName = "sourceName")]
+        [JsonPropertyName("sourceName")]
         public string SourceName { set; get; }
 
         /// <summary>
         /// Type of the scene item's source.
         /// </summary>
-        [JsonProperty(PropertyName = "sourceType")]
+        [JsonPropertyName("sourceType")]
         public SceneItemSourceType SourceType { set; get; }
 
 
         /// <summary>
         /// Builds the object from the JSON data
         /// </summary>
-        /// <param name="data">JSON item description as a <see cref="JObject"/></param>
-        public SceneItemDetails(JObject data)
+        /// <param name="data">JSON item description as a <see cref="JsonObject"/></param>
+        public SceneItemDetails(JsonObject data)
         {
             if (data != null)
             {

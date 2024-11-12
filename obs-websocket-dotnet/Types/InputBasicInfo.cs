@@ -14,14 +14,14 @@ namespace OBSWebsocketDotNet.Types
         /// <summary>
         /// Unversioned Kind of the Input
         /// </summary>
-        [JsonProperty(PropertyName = "unversionedInputKind")]
+        [JsonPropertyName("unversionedInputKind")]
         public string UnversionedKind { get; set; }
 
         /// <summary>
         /// Instantiate object from response data
         /// </summary>
         /// <param name="body"></param>
-        public InputBasicInfo(JObject body) : base(body)
+        public InputBasicInfo(JsonObject body) : base(body)
         {
             JsonConvert.PopulateObject(body.ToString(), this);
         }

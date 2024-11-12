@@ -10,13 +10,13 @@ namespace OBSWebsocketDotNet.Types
         /// <summary>
         /// Name of filter
         /// </summary>
-        [JsonProperty(PropertyName = "name")]
+        [JsonPropertyName("name")]
         public string Name { set; get; }
 
         /// <summary>
         /// Type of filter
         /// </summary>
-        [JsonProperty(PropertyName = "type")]
+        [JsonPropertyName("type")]
         public string Type { set; get; }
     }
 }

@@ -11,20 +11,20 @@ namespace OBSWebsocketDotNet.Types
         /// <summary>
         /// Source volume in linear scale (0.0 to 1.0)
         /// </summary>
-        [JsonProperty(PropertyName = "inputVolumeMul")]
+        [JsonPropertyName("inputVolumeMul")]
         public float VolumeMul { internal set; get; }
 
         /// <summary>
         /// Volume setting in dB
         /// </summary>
-        [JsonProperty(PropertyName = "inputVolumeDb")]
+        [JsonPropertyName("inputVolumeDb")]
         public float VolumeDb { internal set; get; }
 
         /// <summary>
         /// Builds the object from the JSON response body
         /// </summary>
-        /// <param name="data">JSON response body as a <see cref="JObject"/></param>
-        public VolumeInfo(JObject data)
+        /// <param name="data">JSON response body as a <see cref="JsonObject"/></param>
+        public VolumeInfo(JsonObject data)
         {
             JsonConvert.PopulateObject(data.ToString(), this);
         }

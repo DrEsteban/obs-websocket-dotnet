@@ -15,12 +15,12 @@ namespace OBSWebsocketDotNet.Types.Events
         /// <summary>
         /// The body of the event
         /// </summary>
-        public JObject Body { get; }
+        public JsonObject Body { get; }
 
         /// <summary>
         /// Event args for unsupported events
         /// </summary>
-        public UnsupportedEventArgs(string eventType, JObject body)
+        public UnsupportedEventArgs(string eventType, JsonObject body)
         {
             EventType = eventType;
             Body = body;

@@ -11,24 +11,24 @@ namespace OBSWebsocketDotNet.Types
         /// <summary>
         /// Name of the source
         /// </summary>
-        [JsonProperty(PropertyName = "inputName")]
+        [JsonPropertyName("inputName")]
         public string InputName { set; get; }
         /// <summary>
         /// The source volume in percent
         /// </summary>
-        [JsonProperty(PropertyName = "inputVolumeMul")]
+        [JsonPropertyName("inputVolumeMul")]
         public float InputVolumeMul { get; set; }
         /// <summary>
         /// The source volume in decibels
         /// </summary>
-        [JsonProperty(PropertyName = "inputVolumeDb")]
+        [JsonPropertyName("inputVolumeDb")]
         public float InputVolumeDb { get; set; }
 
         /// <summary>
         /// Builds the object from the JSON response body
         /// </summary>
-        /// <param name="data">JSON response body as a <see cref="JObject"/></param>
-        public InputVolume(JObject data)
+        /// <param name="data">JSON response body as a <see cref="JsonObject"/></param>
+        public InputVolume(JsonObject data)
         {
             JsonConvert.PopulateObject(data.ToString(), this);
         }

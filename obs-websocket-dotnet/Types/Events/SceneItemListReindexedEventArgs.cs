@@ -15,16 +15,16 @@ namespace OBSWebsocketDotNet.Types.Events
         public string SceneName { get; } 
 
         /// <summary>
-        /// List of all scene items as JObject
+        /// List of all scene items as JsonObject
         /// </summary>
-        public List<JObject> SceneItems { get; }
+        public List<JsonObject> SceneItems { get; }
 
         /// <summary>
         /// Default Constructor
         /// </summary>
         /// <param name="sceneName">The scene name</param>
-        /// <param name="sceneItems">The scene item data as a colleciton of JObjects</param>
-        public SceneItemListReindexedEventArgs(string sceneName, List<JObject> sceneItems)
+        /// <param name="sceneItems">The scene item data as a colleciton of JsonObjects</param>
+        public SceneItemListReindexedEventArgs(string sceneName, List<JsonObject> sceneItems)
         {
             SceneName = sceneName;
             SceneItems = sceneItems;

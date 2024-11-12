@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 
 namespace OBSWebsocketDotNet.Types
 {
@@ -11,16 +11,16 @@ namespace OBSWebsocketDotNet.Types
         /// <summary>
         /// Settings for the source
         /// </summary>
-        [JsonProperty(PropertyName = "inputSettings")]
-        public JObject Settings { set; get; }
+        [JsonPropertyName("inputSettings")]
+        public JsonObject Settings { set; get; }
 
         /// <summary>
         /// Builds the object from the JSON data
         /// </summary>
-        /// <param name="data">JSON item description as a <see cref="JObject"/></param>
-        public InputSettings(JObject data) : base(data)
+        /// <param name="data">JSON item description as a <see cref="JsonObject"/></param>
+        public InputSettings(JsonObject data) : base(data)
         {
-            JsonConvert.PopulateObject(data.ToString(), this);
+            this.Settings = data["inputSettings"].AsObject();
         }
 
         /// <summary>

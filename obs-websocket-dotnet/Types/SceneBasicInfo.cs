@@ -13,13 +13,13 @@ namespace OBSWebsocketDotNet.Types
         /// <summary>
         /// Name of scene
         /// </summary>
-        [JsonProperty(PropertyName = "sceneName")]
+        [JsonPropertyName("sceneName")]
         public string Name { set; get; }
 
         /// <summary>
         /// Index of scene
         /// </summary>
-        [JsonProperty(PropertyName = "sceneIndex")]
+        [JsonPropertyName("sceneIndex")]
         public string Index { set; get; }
     }
 }

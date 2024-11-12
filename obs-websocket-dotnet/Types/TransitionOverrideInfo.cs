@@ -10,13 +10,13 @@ namespace OBSWebsocketDotNet.Types
         /// <summary>
         /// Name of the current overriding transition. Empty string if no override is set.
         /// </summary>
-        [JsonProperty(PropertyName = "transitionName")]
+        [JsonPropertyName("transitionName")]
         public string Name { internal set; get; }
 
         /// <summary>
         /// Transition duration in milliseconds. -1 if no override is set.
         /// </summary>
-        [JsonProperty(PropertyName = "transitionDuration")]
+        [JsonPropertyName("transitionDuration")]
         public int Duration { internal set; get; }
     }
 }

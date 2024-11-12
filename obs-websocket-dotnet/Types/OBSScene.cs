@@ -12,26 +12,26 @@ namespace OBSWebsocketDotNet.Types
         /// <summary>
         /// OBS Scene name
         /// </summary>
-        [JsonProperty(PropertyName = "sceneName")]
+        [JsonPropertyName("sceneName")]
         public string Name;
 
         /// <summary>
         /// Is group
         /// </summary>
-        [JsonProperty(PropertyName = "isGroup")]
+        [JsonPropertyName("isGroup")]
         public bool IsGroup;
 
         /// <summary>
         /// Scene item list
         /// </summary>
-        [JsonProperty(PropertyName = "sources")]
+        [JsonPropertyName("sources")]
         public List<SceneItemDetails> Items;
 
         /// <summary>
         /// Builds the object from the JSON description
         /// </summary>
-        /// <param name="data">JSON scene description as a <see cref="JObject" /></param>
-        public ObsScene(JObject data)
+        /// <param name="data">JSON scene description as a <see cref="JsonObject" /></param>
+        public ObsScene(JsonObject data)
         {
             JsonSerializerSettings settings = new JsonSerializerSettings
             {

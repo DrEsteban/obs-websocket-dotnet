@@ -15,13 +15,13 @@ namespace OBSWebsocketDotNet.Types
         /// <summary>
         /// Is output currently active (streaming/recording)
         /// </summary>
-        [JsonProperty(PropertyName = "outputActive")]
+        [JsonPropertyName("outputActive")]
         public bool IsActive { set; get; }
 
         /// <summary>
         /// Output state as string
         /// </summary>
-        [JsonProperty(PropertyName = "outputState")]
+        [JsonPropertyName("outputState")]
         public string StateStr { set; get; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace OBSWebsocketDotNet.Types
         /// Constructor
         /// </summary>
         /// <param name="body"></param>
-        public OutputStateChanged(JObject body)
+        public OutputStateChanged(JsonObject body)
         {
             JsonConvert.PopulateObject(body.ToString(), this);
         }

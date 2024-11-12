@@ -11,13 +11,13 @@ namespace OBSWebsocketDotNet.Types
         /// <summary>
         /// Name of the currently active profile
         /// </summary>
-        [JsonProperty(PropertyName = "currentProfileName")]
+        [JsonPropertyName("currentProfileName")]
         public string CurrentProfileName { set; get; }
 
         /// <summary>
         /// List of all profiles
         /// </summary>
-        [JsonProperty(PropertyName = "profiles")]
+        [JsonPropertyName("profiles")]
         public List<string> Profiles { set; get; }
     }
 }
